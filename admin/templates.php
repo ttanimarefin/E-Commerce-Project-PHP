@@ -1,4 +1,15 @@
-<?php include "includes/header.php"  ?>
+<?php include ("includes/header.php"); ?>
+ 
+<?php include("Class/adminBack.php");
+session_start();
+$adminID=$_SESSION['id'];
+if($adminID==null){
+    header('location:index.php');
+}
+
+
+?>
+
   <body>
   <body>
 	  <div class="fixed-button">
@@ -39,7 +50,7 @@
                                             <div class="row">
 
                                                 <?php
-                                                    if(isset($views)){
+                                                    if($views){
                                                         if($views == "dashboard"){
                                                             include("views/dashboard-view.php");
                                                         }elseif($views == "add-cat"){

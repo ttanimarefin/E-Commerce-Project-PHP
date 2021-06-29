@@ -1,4 +1,3 @@
 <?php
-
-$views ="dashboard";
-include ("templates.php");
+$views = "dashboard";
+include("templates.php");

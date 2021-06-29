@@ -1,7 +1,23 @@
-<?php include("includes/header.php")?>
+<?php include("includes/header.php");?>
+
+<?php
+     include("Class/adminBack.php");
+     $obj_adminback = new adminBack();
+     if(isset($_POST['admin_btn'])){
+         $obj_adminback->admin_login($_POST);
+     }
+     session_start();
+     if(isset($_SESSION['id'])){
+        header('location:dasboard.php');
+     }
+      
+?>
+
+
 
 <body>
 
+    <body>
     <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
         <!-- Container-fluid starts -->
         <div class="container">
@@ -9,7 +25,7 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body mr-auto ml-auto">
-                        <form class="md-float-material">
+                        <form action="" method="post" class="md-float-material">
                             <div class="text-center">
                                 <img src="assets/images/logo.png" alt="logo.png">
                             </div>
@@ -21,11 +37,11 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Your Email Address">
+                                    <input name="admin_email" type="email" class="form-control" placeholder="Your Email Address">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input name="admin_pass" type="password" class="form-control" placeholder="Password">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
@@ -44,7 +60,7 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                        <input type="submit" value="Login" name="admin_btn" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">
                                     </div>
                                 </div>
                                 <hr/>
@@ -70,10 +86,8 @@
         </div>
         <!-- end of container-fluid -->
     </section>
-   
 
 
-</body>
 
 
 
