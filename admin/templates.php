@@ -7,7 +7,12 @@ $adminEmail=$_SESSION['adminEmail'];
 if($adminID==null){
     header('location:index.php');
 }
+// for logout
+if(isset($_GET['adminLogout'])){
+    $obj_adminback= new adminBack;
+    $obj_adminback->adminLogout();
 
+}
 
 ?>
 

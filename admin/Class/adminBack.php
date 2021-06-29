@@ -41,6 +41,14 @@ class adminBack{
         
     }
 
+    function adminLogout(){
+        unset($_SESSION['id']);
+        unset($_SESSION['adminEmail']);
+        unset($_SESSION['adminPass']);
+
+        header('location: index.php');
+    }
+
 
 }
 
