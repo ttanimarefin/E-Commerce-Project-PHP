@@ -53,9 +53,10 @@ if(isset($_GET['adminLogout'])){
                                 <div class="page-wrapper">
 
                                     <div class="page-body">
-                                            <div class="row">
+                                            
 
                                                 <?php
+                                                 
                                                     if($views){
                                                         if($views == "dashboard"){
                                                             include("views/dashboard-view.php");
@@ -72,11 +73,13 @@ if(isset($_GET['adminLogout'])){
                                                         }elseif($views == "edit-product"){
                                                             include("views/edit_product_view.php");
                                                         }
+                                                    }else{
+                                                        echo "error";
                                                     }
                                                 
                                                 ?>
 
-                                            </div>
+                                            
                                     </div>
 
                                     
