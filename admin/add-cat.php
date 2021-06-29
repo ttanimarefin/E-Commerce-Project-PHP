@@ -1,3 +1,3 @@
 <?php 
-include("templates.php");
 $views="add-cat";
+include("templates.php");
