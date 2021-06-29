@@ -3,6 +3,7 @@
 <?php include("Class/adminBack.php");
 session_start();
 $adminID=$_SESSION['id'];
+$adminEmail=$_SESSION['adminEmail'];
 if($adminID==null){
     header('location:index.php');
 }
