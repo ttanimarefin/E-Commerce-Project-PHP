@@ -67,6 +67,14 @@ class adminBack{
         }
     }
 
+    function display_category(){
+        $query="SELECT * FROM category";
+        if(mysqli_query($this->conn,$query)){
+            $return_ctg=mysqli_query($this->conn,$query);
+            return $return_ctg;
+        }
+    }
+
 
 }
 
