@@ -1,4 +1,4 @@
 <?php 
 
-$views="manage-cat";
+$views= "manage-cat";
 include("templates.php");
