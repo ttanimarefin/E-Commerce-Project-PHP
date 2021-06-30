@@ -9,6 +9,8 @@ if(isset($_GET['status'])){
           $obj_adminBack->publish_category($get_id); 
     }elseif($_GET['status']=='unpublish'){
         $obj_adminBack->unpublish_category($get_id);
+     }elseif($_GET['action']=='delete'){
+        $obj_adminBack->unpublish_category($get_id);
      }
      
     }else{
@@ -77,7 +79,7 @@ if(isset($_GET['status'])){
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn btn-sm" href="">Update</a>||
-                                                <a class="btn btn-info btn btn-sm " href="">Delete</a>
+                                                <a onclick="return confirm('Are You Sure?')" class="btn btn-info btn btn-sm " href="?action=delete&&id=<?php echo $ctg['ctg_id']?>">Delete</a>
                                             </td>
                                         
                                         </tr>
