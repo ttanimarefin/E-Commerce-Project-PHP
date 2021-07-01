@@ -69,9 +69,10 @@ if(isset($_GET['adminLogout'])){
                                                         }elseif($views == "manage-product"){
                                                             include("views/manage-product-view.php");
                                                         }elseif($views == "edit-cat"){
-                                                            include("views/edit_cat_view.php");
+                                                            include("views/edit-cat-view.php");
                                                         }elseif($views == "edit-product"){
-                                                            include("views/edit_product_view.php");
+                                                            include("views/edit-product-view.php");
+                                                        
                                                         }
                                                     }else{
                                                         echo "error";

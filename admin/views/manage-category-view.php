@@ -78,7 +78,7 @@ if(isset($_GET['status'])){
                                             ?>
                                             </td>
                                             <td>
-                                                <a class="btn btn-primary btn btn-sm" href="">Update</a>||
+                                                <a class="btn btn-primary btn btn-sm" href="edit-cat.php?action=edit&&id=<?php echo $ctg['ctg_id']?>">Edit</a>||
                                                 <a onclick="return confirm('Are You Sure?')" class="btn btn-info btn btn-sm " href="?action=delete&&id=<?php echo $ctg['ctg_id']?>">Delete</a>
                                             </td>
                                         

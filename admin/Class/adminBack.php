@@ -87,6 +87,61 @@ class adminBack{
         mysqli_query($this->conn,$query);
     }
 
+    function category_toshow($id){
+         $query="SELECT * FROM category WHERE ctg_id=$id";
+         if(mysqli_query($this->conn,$query)){
+             $cat_info= mysqli_query($this->conn,$query);
+             $ct_info=mysqli_fetch_assoc($cat_info);
+             return $ct_info;
+         }
+    }
+
+    function category_toupdate($receive_data){
+            $ctg_name=$receive_data['update_ctg_name'];
+            $ctg_des=$receive_data['update_ctg_des'];
+            $ctg_id=$receive_data['update_ctg_id'];
+
+            $query= "UPDATE category SET ctg_name='{$ctg_name}', ctg_des='{$ctg_des}' WHERE ctg_id='{$ctg_id}'";
+            if(mysqli_query($this->conn,$query)){
+               
+               $return_msg="Category Update Successfully";
+               return $return_msg;
+              
+               
+            }
+    }
+    function add_product($data){
+        $pdt_name=$data['pdt_name'];
+        $pdt_price=$data['pdt_price'];
+        $pdt_des=$data['pdt_des'];
+        $pdt_ctg=$data['pdt_ctg'];
+        $pdt_name=$data['pdt_name'];
+        $pdt_id=$data['pdt_id'];
+        $pdt_status=$data['pdt_status'];
+        $pdt_img_name=$_FILES['pdt_image']['name'];
+        $pdt_img_size=$_FILES['pdt_image']['size'];
+        $pdt_tmp_name=$_FILES['pdt_image']['tmp_name'];
+        $pdt_ext=pathinfo($pdt_img_name,PATHINFO_EXTENSION);
+
+        if($pdt_ext=='jpg' or $pdt_ext=='png'or $pdt_ext=='jpeg'){
+                if( $pdt_img_size<=2097152){
+                        $query="INSERT INTO products (pdt_name,pdt_price,pdt_des,pdt_ctg,pdt_img,pdt_status) VALUES('{$pdt_name}','{$pdt_price}','{$pdt_des}','{$pdt_ctg}','{$pdt_img_name}', $pdt_status)";
+                        if(mysqli_query($this->conn,$query)){
+                            move_uploaded_file($pdt_tmp_name,'upload/'.$pdt_img_name);
+                            $msg="Product Added Succesfully";
+                            return $msg;
+                        }else{
+                            echo "error";
+                        }
+                }else{
+                    $msg="Your File Size Should Be Less or Equal 2 MB";
+                }
+        }else{
+            $msg="Your File Must Be a jpg or png File;
+            return $msg;
+        }
+    }
+
 }
 
 
@@ -94,3 +149,5 @@ class adminBack{
 
 
 ?>
+
+
