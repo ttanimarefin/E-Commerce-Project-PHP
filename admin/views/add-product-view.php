@@ -67,7 +67,7 @@ if(isset($_FILES['pdt_image'])){
             
         </div>
         <div class="form-group">
-        <label for="pdt_status"><b>Product Image</b></label>
+        <label for="pdt_status"><b>Product Status</b></label>
             <select class="form-control" name="pdt_status">
                 <option disable selected>Select Status</option>
                 <option value="1">Published</option>

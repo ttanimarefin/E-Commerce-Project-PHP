@@ -147,7 +147,50 @@ class adminBack{
            return $product;
         }
     }
+    function delete_product($id){
+        $query="DELETE FROM product WHERE pdt_id=$id";
+        if(mysqli_query($this->conn,$query)){
+            $msg="Product Deleted Successfully";
+            return $msg;
+        }
+    }
+    function editupdate_product($id){
+            $query="SELECT * FROM product_info_ctg WHERE pdt_id=$id";
+            if(mysqli_query($this->conn,$query)){
+                $product_info=mysqli_query($this->conn,$query);
+                $pdt_data=mysqli_fetch_assoc($product_info);
+                return $pdt_data;
+            }
+    }
+     function update_product($data){
+        $pdt_name = $data['u_pdt_name'];
+        $pdt_id = $data['u_pdt_id'];
+        $pdt_price = $data['u_pdt_price'];
+        $pdt_des = $data['u_pdt_des'];
+        $pdt_ctg = $data['u_pdt_ctg'];
+        $pdt_img_name = $_FILES['u_pdt_image']['name'];
+        $pdt_img_size = $_FILES['u_pdt_image']['size'];
+        $pdt_tmp_name = $_FILES['u_pdt_image']['tmp_name'];
+        $pdt_ext = pathinfo($pdt_img_name, PATHINFO_EXTENSION);
 
+        $pdt_status = $data['u_pdt_status'];
+        if($pdt_ext == 'jpg' or $pdt_ext== 'png' or $pdt_ext== 'jpeg'){
+            if($pdt_img_size <= 2097152){
+                $query= "UPDATE products SET pdt_name='$pdt_name',pdt_price=$pdt_price,pdt_des='$pdt_des',pdt_ctg=$pdt_ctg,pdt_imeg='$pdt_img_name',pdt_status='$pdt_status' WHERE pdt_id=$pdt_id";
+
+                if(mysqli_query($this->conn, $query)){
+                    move_uploaded_file($pdt_tmp_name,'upload/'.$pdt_img_name);
+                    $msg = "Product Added Successfully!";
+                    return $msg;
+                }
+            }else{
+                $msg = "Your File Size Should Be Less or Equal 2 MB!";
+            }
+        }else{
+            $msg = "Your File Must Be a JPG or PNG File!";
+            return $msg;
+        }
+     }
 
     
 } ?>
