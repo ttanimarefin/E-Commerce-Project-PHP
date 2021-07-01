@@ -1,3 +1,4 @@
 <?php 
-include("templates.php");
+
 $views="manage-product";
+include("templates.php");

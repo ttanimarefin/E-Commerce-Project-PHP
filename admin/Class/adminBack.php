@@ -140,6 +140,13 @@ class adminBack{
         }
 
     }
+    function display_product(){
+        $query="SELECT * FROM product_info_ctg";
+        if(mysqli_query($this->conn,$query)){
+           $product=mysqli_query($this->conn,$query); 
+           return $product;
+        }
+    }
 
 
     
