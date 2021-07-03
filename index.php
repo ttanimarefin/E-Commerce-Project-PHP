@@ -1,7 +1,13 @@
 
-<?php include_once('admin/Class//adminBack.php');
+<?php 
+include('admin/Class/adminBack.php');
 $obj=new adminBack();
 $ctg=$obj->p_display_category();
+$ctgDatas=array();
+while($data=mysqli_fetch_assoc($ctg)){
+     $ctgDatas[]=$data;
+}
+
 
 ?>
 <?php include_once('includes/head.php'); ?>

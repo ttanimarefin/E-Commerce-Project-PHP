@@ -16,14 +16,14 @@ $ctg=$obj->p_display_category();
       <ul class="menu clone-main-menu">
 
 <?php 
-while($data=mysqli_fetch_assoc( $ctg)){
+foreach($ctgDatas as $ctgData){
 
 
 
 
 ?>
             <li class="menu-item menu-item-has-children has-megamenu">
-                <a href="#" class="menu-name" data-title="Fruit & Nut Gifts"><i class="biolife-icon icon-fruits"></i><?php echo $data['ctg_name'];?></a>
+                <a href="#" class="menu-name" data-title="Fruit & Nut Gifts"><i class="biolife-icon icon-fruits"></i><?php echo $ctgData['ctg_name'];?></a>
 
 
                 <div class="wrap-megamenu lg-width-900 md-width-640">
