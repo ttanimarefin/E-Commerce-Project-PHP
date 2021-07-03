@@ -74,6 +74,13 @@ class adminBack{
             return $return_ctg;
         }
     }
+    function p_display_category(){
+        $query="SELECT * FROM category";
+        if(mysqli_query($this->conn,$query)){
+            $return_ctg=mysqli_query($this->conn,$query);
+            return $return_ctg;
+        }
+    }
     function publish_category($id){
             $query="UPDATE category SET ctg_status=1 WHERE ctg_id=$id";
             mysqli_query($this->conn,$query);

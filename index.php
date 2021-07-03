@@ -1,3 +1,9 @@
+
+<?php include_once('admin/Class//adminBack.php');
+$obj=new adminBack();
+$ctg=$obj->p_display_category();
+
+?>
 <?php include_once('includes/head.php'); ?>
 
 <body class="biolife-body">

@@ -1,7 +1,7 @@
 <?php
 
 $obj_adminBack=new adminBack();
-$ctg_info=$obj_adminBack->display_category();
+$ctg_info=$obj_adminBack->p_display_category();
 if(isset($_POST['pdt_btn'])){
     $return_msg=$obj_adminBack->add_product($_POST);
 }
