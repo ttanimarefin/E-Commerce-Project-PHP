@@ -1,19 +1,20 @@
-<?php
-$obj_adminBack=new adminBack();
-$ctg_info=$obj_adminBack->display_category();
-if(isset($_GET['prostatus'])){
-    $id=$_GET['id'];
-    if($_GET['prostatus']=='edit'){
-        $pdt_info=$obj_adminBack->editupdate_product($id);
+<?php 
+    $obj_adminBack = new adminBack();
+    $ctg_info = $obj_adminBack->display_category();
+    if(isset($_GET['prostatus'])){
+        $id = $_GET['id'];
+        if($_GET['prostatus']=='edit'){
+            $pdtInfo = $obj_adminBack->getEditProduct_info($id);
+        }
     }
-}
-
-if(isset($_POST['u_pdt_btn'])){
-    $update_msg=$obj_adminBack->update_product($_POST);
-}
-
+    if(isset($_POST['u_pdt_btn'])){
+        $update_msg = $obj_adminBack->update_product($_POST);
+    }
 
 ?>
+<?php if(isset($update_msg)){
+    echo $update_msg;
+} ?>
 <div class="card text-left">
   <img class="card-img-top" src="holder.js/100px180/" alt="">
   <div class="card-body">

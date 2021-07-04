@@ -5,11 +5,11 @@ $ctg_info=$obj_adminBack->p_display_category();
 if(isset($_POST['pdt_btn'])){
     $return_msg=$obj_adminBack->add_product($_POST);
 }
-if(isset($_FILES['pdt_image'])){
-    echo"<pre>";
-    print_r($_FILES);
-    echo"</pre>";
-}
+// if(isset($_FILES['pdt_image'])){
+//     echo"<pre>";
+//     print_r($_FILES);
+//     echo"</pre>";
+// }
 
 ?>
 
