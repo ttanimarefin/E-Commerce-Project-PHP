@@ -9,13 +9,17 @@ if(isset($_GET['status'])){
           $obj_adminBack->publish_category($get_id); 
     }elseif($_GET['status']=='unpublish'){
         $obj_adminBack->unpublish_category($get_id);
-     }elseif($_GET['action']=='delete'){
+     }elseif($_GET['status']=='delete'){
         $obj_adminBack->unpublish_category($get_id);
      }
      
-    }else{
-        echo"Not find data";
-    }   
+    }  
+    if(isset($_GET['action'])){
+        $get_id=$_GET['id'];
+        if($_GET['action']=='delete'){
+            $obj_adminBack->delete_category($get_id);
+        }
+    }
 
 ?>
 

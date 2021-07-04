@@ -3,7 +3,7 @@ $obj_adminBack=new adminBack();
 if(isset($_GET['action'])){
     $get_id=$_GET['id'];
     if($_GET['action']=='edit'){
-        $return_data= $obj_adminBack->category_toshow($get);
+        $return_data= $obj_adminBack->category_toshow($get_id);
     }
 }
 

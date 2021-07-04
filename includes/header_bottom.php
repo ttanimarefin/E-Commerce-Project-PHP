@@ -8,8 +8,16 @@
             <div class="col-lg-6 col-md-6 hidden-sm hidden-xs md-possition-initial">
                 <div class="primary-menu">
                     <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
-                        <li class="menu-item"><a href="index.php">Home</a></li>
-                        <li class="menu-item menu-item-has-children has-megamenu">
+                    <li class="menu-item"><a href="">Home</a></li>
+
+<?php 
+foreach($ctgDatas as $ctgData){
+?>
+                        
+                        <li class="menu-item"><a href=""><?php echo $ctgData['ctg_name'];?></a></li>
+
+
+                        <!-- <li class="menu-item menu-item-has-children has-megamenu">
                             <a href="" class="menu-name" data-title="Shop">Shop</a>
                             <div class="wrap-megamenu lg-width-900 md-full-width">
                                 <div class="mega-content">
@@ -63,13 +71,17 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> 
+                    
+
+
                         <li class="menu-item menu-item-has-children has-child">
-                            <a href="#" class="menu-name" data-title="Product"><?php echo $ctgData['ctg_name'];?></a>
+                            <a href="#" class="menu-name" data-title="Product"></a>
                             
                         </li>
                       
-                        <li class="menu-item menu-item-has-children has-megamenu">
+                      
+                      <li class="menu-item menu-item-has-children has-megamenu">
                             <a href="#" class="menu-name" data-title="Blog">Blog</a>
                             <div class="wrap-megamenu lg-width-800 md-full-width">
                                 <div class="mega-content">
@@ -140,7 +152,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li>  -->
+
+<?php } ?>
+
                         <li class="menu-item"><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>

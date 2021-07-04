@@ -23,7 +23,7 @@ foreach($ctgDatas as $ctgData){
 
 ?>
             <li class="menu-item menu-item-has-children has-megamenu">
-                <a href="#" class="menu-name" data-title="Fruit & Nut Gifts"><i class="biolife-icon icon-fruits"></i><?php echo $ctgData['ctg_name'];?></a>
+                <a href="category.php?status=catView&&id=<?php echo $ctgData['ctg_id'];?>" class="menu-name" data-title="Fruit & Nut Gifts"><i class="<?php echo $ctgData['ctg_name'];?>"></i><?php echo $ctgData['ctg_name'];?></a>
 
 
                 <div class="wrap-megamenu lg-width-900 md-width-640">
@@ -37,11 +37,13 @@ foreach($ctgDatas as $ctgData){
                                         <li><a href="#">Mixed Fruits</a></li>
                                         <li><a href="#">Oranges</a></li>
                                         <li><a href="#">Bananas & Plantains</a></li>
-                                        <li><a href="#">Fresh Gala Apples</a></li>
+                                        
+                                        <!-- <li><a href="#">Fresh Gala Apples</a></li>
                                         <li><a href="#">Berries</a></li>
                                         <li><a href="#">Pears</a></li>
                                         <li><a href="#">Produce</a></li>
-                                        <li><a href="#">Snack Foods</a></li>
+                                        <li><a href="#">Snack Foods</a></li> -->
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -187,92 +189,16 @@ foreach($ctgDatas as $ctgData){
                     </div>
                 </div>
             </li>
-            <li class="menu-item menu-item-has-children has-megamenu">
-                <a href="#" class="menu-name" data-title="Fresh Berries"><i class="biolife-icon icon-grape"></i>Fresh Berries</a>
-                <div class="wrap-megamenu lg-width-900 md-width-640 background-mega-02">
-                    <div class="mega-content">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 sm-col-12 md-margin-bottom-83 xs-margin-bottom-25">
-                                <div class="wrap-custom-menu vertical-menu">
-                                    <h4 class="menu-title">Fresh Berries</h4>
-                                    <ul class="menu">
-                                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                                        <li><a href="#">Mixed Fruits</a></li>
-                                        <li><a href="#">Oranges</a></li>
-                                        <li><a href="#">Bananas & Plantains</a></li>
-                                        <li><a href="#">Fresh Gala Apples</a></li>
-                                        <li><a href="#">Berries</a></li>
-                                        <li><a href="#">Pears</a></li>
-                                        <li><a href="#">Produce</a></li>
-                                        <li><a href="#">Snack Foods</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 sm-col-12 lg-padding-left-23 xs-margin-bottom-36px md-margin-bottom-0">
-                                <div class="wrap-custom-menu vertical-menu">
-                                    <h4 class="menu-title">Gifts</h4>
-                                    <ul class="menu">
-                                        <li><a href="#">Non-Dairy Coffee Creamers</a></li>
-                                        <li><a href="#">Coffee Creamers</a></li>
-                                        <li><a href="#">Mayonnaise</a></li>
-                                        <li><a href="#">Almond Milk</a></li>
-                                        <li><a href="#">Ghee</a></li>
-                                        <li><a href="#">Beverages</a></li>
-                                        <li><a href="#">Ranch Salad Dressings</a></li>
-                                        <li><a href="#">Hemp Milk</a></li>
-                                        <li><a href="#">Nuts & Seeds</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-4 sm-col-12 lg-padding-left-25 md-padding-top-55">
-                                <div class="biolife-banner layout-01">
-                                    <h3 class="top-title">Farm Fresh</h3>
-                                    <p class="content"> All the Lorem Ipsum generators on the Internet tend.</p>
-                                    <b class="bottomm-title">Berries Series</b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            
             <li class="menu-item"><a href="#" class="menu-name" data-title="Ocean Foods"><i class="biolife-icon icon-fish"></i>Ocean Foods</a></li>
-            <li class="menu-item menu-item-has-children has-child">
-                <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>Butter & Eggs</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"><a href="#">Omelettes</a></li>
-                    <li class="menu-item"><a href="#">Breakfast Scrambles</a></li>
-                    <li class="menu-item menu-item-has-children has-child"><a href="#" class="menu-name" data-title="Eggs & other considerations">Eggs & other considerations</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Classic Breakfast</a></li>
-                            <li class="menu-item"><a href="#">Huevos Rancheros</a></li>
-                            <li class="menu-item"><a href="#">Everything Egg Sandwich</a></li>
-                            <li class="menu-item"><a href="#">Egg Sandwich</a></li>
-                            <li class="menu-item"><a href="#">Vegan Burrito</a></li>
-                            <li class="menu-item"><a href="#">Biscuits and Gravy</a></li>
-                            <li class="menu-item"><a href="#">Bacon Avo Egg Sandwich</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="#">Griddle</a></li>
-                    <li class="menu-item menu-item-has-children has-child"><a href="#" class="menu-name" data-title="Sides & Extras">Sides & Extras</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Breakfast Burrito</a></li>
-                            <li class="menu-item"><a href="#">Crab Cake Benedict</a></li>
-                            <li class="menu-item"><a href="#">Corned Beef Hash</a></li>
-                            <li class="menu-item"><a href="#">Steak & Eggs</a></li>
-                            <li class="menu-item"><a href="#">Oatmeal</a></li>
-                            <li class="menu-item"><a href="#">Fruit & Yogurt Parfait</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="#">Biscuits</a></li>
-                    <li class="menu-item"><a href="#">Seasonal Fruit Plate</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-fast-food"></i>Fastfood</a></li>
+            
+         
+            <!-- <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-fast-food"></i>Fastfood</a></li>
             <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-beef"></i>Fresh Meat</a></li>
             <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-onions"></i>Fresh Onion</a></li>
             <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-avocado"></i>Papaya & Crisps</a></li>
             <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-contain"></i>Oatmeal</a></li>
-            <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-fresh-juice"></i>Fresh Bananas & Plantains</a></li>
+            <li class="menu-item"><a href="#" class="menu-title"><i class="biolife-icon icon-fresh-juice"></i>Fresh Bananas & Plantains</a></li> -->
             
         </li> 
             <?php } ?>
