@@ -169,7 +169,12 @@ if (isset($_GET['status'])) {
                                             <?php 
                                               if(isset($_POST['update_total'])){
                                                   $quantity=$_POST['quantity'];
-                                                  echo $pro['pdt_price'] *  $quantity;
+                                                  if(empty( $quantity)){
+                                                    echo "Qunatity Should Not Be Empty !";
+                                                }else{
+                                                    echo '£'. $pro['pdt_price'] *  $quantity;
+                                                }
+                                                 
 
                                               }else{
                                                  echo $pro['pdt_price'];
@@ -177,7 +182,7 @@ if (isset($_GET['status'])) {
                                             
                                             ?>
                                             
-                                            £<?php echo $pro['pdt_price'];?></p>
+                                            <?php echo $pro['pdt_price'];?></p>
                                         </div>
                                         <div class="buttons">
                                             <a href="#" class="btn add-to-cart-btn">add to cart</a>
