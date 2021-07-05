@@ -15,6 +15,8 @@ if (isset($_GET['status'])) {
         $pros[] = $prodatas;
     }
 }
+$cat_id=$prodatas['cat_id'];
+$related_product=$obj->related_product($cat_id);
 if (isset($_GET['status'])) {
     $catID = $_GET['id'];
     if ($_GET['status'] == 'catView') {
@@ -497,19 +499,26 @@ if (isset($_GET['status'])) {
                                     </div>
                                     <ul class="products-list biolife-carousel nav-center-02 nav-none-on-mobile" data-slick='{"rows":1,"arrows":true,"dots":false,"infinite":false,"speed":400,"slidesMargin":0,"slidesToShow":5, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 4}},{"breakpoint":992, "settings":{ "slidesToShow": 3, "slidesMargin":20 }},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":10}}]}'>
 
+                      <?php
+                      while($rpro=mysqli_fetch_assoc($related_product)){
+
+                      
+                       
+                      ?>
+
                                         <li class="product-item">
                                             <div class="contain-product layout-default">
                                                 <div class="product-thumb">
-                                                    <a href="#" class="link-to-product">
-                                                        <img src="assets/images/products/p-13.jpg" alt="dd" width="270" height="270" class="product-thumnail">
+                                                    <a href="single_product.php?status=sigleproduct&&id=<?php echo $rpro['pdt_id']; ?>" class="link-to-product">
+                                                        <img src="admin/upload/<?php echo $rpro['pdt_img'];?>" alt="dd" width="270" height="270" class="product-thumnail">
                                                     </a>
                                                 </div>
                                                 <div class="info">
-                                                    <b class="categories">Fresh Fruit</b>
-                                                    <h4 class="product-title"><a href="#" class="pr-name">National Fresh Fruit</a></h4>
+                                                    <b class="categories"><?php echo $rpro['ctg_name'];?></b>
+                                                    <h4 class="product-title"><a href="single_product.php?status=sigleproduct&&id=<?php echo $rpro['pdt_id']; ?>" class="pr-name"><?php echo $rpro['pdt_name'];?></a></h4>
                                                     <div class="price">
-                                                        <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
-                                                        <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del>
+                                                        <ins><span class="price-amount"><span class="currencySymbol">£</span><?php echo $rpro['pdt_price'];?></span></ins>
+                                                        <!-- <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del> -->
                                                     </div>
                                                     <div class="slide-down-box">
                                                         <p class="message">All products are carefully selected to ensure food safety.</p>
@@ -522,6 +531,10 @@ if (isset($_GET['status'])) {
                                                 </div>
                                             </div>
                                         </li>
+                        <?php }?> 
+                                        
+                                        
+                                        
                                         <li class="product-item">
                                             <div class="contain-product layout-default">
                                                 <div class="product-thumb">

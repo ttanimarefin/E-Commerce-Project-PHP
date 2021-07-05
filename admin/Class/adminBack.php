@@ -218,6 +218,15 @@ class adminBack{
             return $proinfo;
         }
     }
+    function related_product($id){
+        $query="SELECT * FROM product_info_ctg WHERE ctg_id=$id";
+        if(mysqli_query($this->conn, $query)){
+            $proinfo = mysqli_query($this->conn, $query);
+            
+            return $proinfo;
+        }
+
+    }
 
     
 } ?>
