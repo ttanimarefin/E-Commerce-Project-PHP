@@ -10,12 +10,14 @@ if (isset($_GET['status'])) {
     $pdtID = $_GET['id'];
     if ($_GET['status'] == 'sigleproduct') {
         $prodata = $obj->product_by_id($pdtID);
+        
         $pros = array();
         $prodatas = mysqli_fetch_assoc($prodata);
         $pros[] = $prodatas;
     }
 }
-$cat_id=$prodatas['cat_id'];
+
+$cat_id=$prodatas['ctg_id'];
 $related_product=$obj->related_product($cat_id);
 if (isset($_GET['status'])) {
     $catID = $_GET['id'];
@@ -161,7 +163,7 @@ if (isset($_GET['status'])) {
                                                 <input class="form-control" name="quantity" type="number">
                                                 
                                                 <br>
-                                                <input class="btn btn-primary" type="submit" name="update_total" value="">
+                                                <input class="btn btn-primary" type="submit" name="update_total" value="update total">
 
                                             </form>
                                         </div>
@@ -179,12 +181,12 @@ if (isset($_GET['status'])) {
                                                  
 
                                               }else{
-                                                 echo $pro['pdt_price'];
+                                                 echo '£'.  $pro['pdt_price'];
                                               }
                                             
                                             ?>
                                             
-                                            <?php echo $pro['pdt_price'];?></p>
+                                           
                                         </div>
                                         <div class="buttons">
                                             <a href="#" class="btn add-to-cart-btn">add to cart</a>
