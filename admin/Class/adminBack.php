@@ -209,12 +209,13 @@ class adminBack{
              return $proinfo;
          }
      }
-     function ctg_by_id($id){
-        $query= "SELECT * FROM product_info_ctg WHERE ctg_id=$id";
+     function product_by_id($id){
+        $query= "SELECT * FROM product_info_ctg WHERE pdt_id=$id";
         if(mysqli_query($this->conn, $query)){
             $proinfo = mysqli_query($this->conn, $query);
-            $ctg = mysqli_fetch_assoc($proinfo);
-            return $ctg;
+            // $ctg = mysqli_fetch_assoc($proinfo);
+            // return $ctg;
+            return $proinfo;
         }
     }
 
