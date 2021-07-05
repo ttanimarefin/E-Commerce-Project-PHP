@@ -45,10 +45,10 @@ if(isset($_GET['status'])){
             <!--Hero Section-->
             <div class="hero-section hero-background">
                 <h1 class="page-title">
-                    <?php foreach($pros as $pro){
-                        echo $pro['ctg_name'];
-                    }
-                    
+                    <?php //foreach($pros as $pro){
+                        //echo $pro['ctg_name'];}
+                     
+                      echo $category_name['ctg_name'];
                     
                     ?>
                 </h1>
@@ -60,9 +60,8 @@ if(isset($_GET['status'])){
                     <ul>
                         <li class="nav-item"><a href="index.php" class="permal-link">Home</a></li>
                         <li class="nav-item"><span class="current-page">
-                        <?php foreach($pros as $pro){
-                        echo $pro['ctg_name'];
-                    }
+                        <?php echo $category_name['ctg_name'];
+                    
                     
                     
                     ?>     
