@@ -1,6 +1,4 @@
-<a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
-
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/jquery.nice-select.min.js"></script>
