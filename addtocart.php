@@ -89,9 +89,13 @@ if(isset($_POST['remove_product'])){
                                     <tbody>
 
                                     <?php if(isset($_SESSION['cart'])){
+
+                                        $subtotal=0;
+                                        $total_product=0;
                                         foreach($_SESSION['cart'] as $key=>$value ){
 
-                                        
+                                        $subtotal=$subtotal+$value['pdt_price'];
+                                        $total_product++;
 
                                     
                         
@@ -156,8 +160,8 @@ if(isset($_POST['remove_product'])){
                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                             <div class="shpcart-subtotal-block">
                                 <div class="subtotal-line">
-                                    <b class="stt-name">Subtotal <span class="sub">(2ittems)</span></b>
-                                    <span class="stt-price">£170.00</span>
+                                    <b class="stt-name">Subtotal <span class="sub">(<?php echo $total_product.'items';?>)</span></b>
+                                    <span class="stt-price">£<?php echo $subtotal?></span>
                                 </div>
                                 <div class="subtotal-line">
                                     <b class="stt-name">Shipping</b>
