@@ -1,4 +1,5 @@
 <?php
+
 include('admin/Class/adminBack.php');
 $obj = new adminBack();
 $ctg = $obj->p_display_category();

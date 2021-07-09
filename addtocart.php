@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 include('admin/Class/adminBack.php');
 $obj = new adminBack();
 $ctg = $obj->p_display_category();
@@ -22,7 +23,7 @@ if (isset($_POST['addtocart'])) {
             $count = count($_SESSION['cart']);
             $_SESSION['cart'][$count] = array(
                 'pdt_name' => $_POST['pdt_name'],
-                'pdt_price' => $_POST['pdt_pice'],
+                'pdt_price' => $_POST['pdt_price'],
                 'pdt_img' => $_POST['pdt_img'],
                 'quantity' => 1,
             );
@@ -30,14 +31,13 @@ if (isset($_POST['addtocart'])) {
     } else {
         $_SESSION['cart'][0] = array(
             'pdt_name' => $_POST['pdt_name'],
-            'pdt_price' => $_POST['pdt_pice'],
+            'pdt_price' => $_POST['pdt_price'],
             'pdt_img' => $_POST['pdt_img'],
             'quantity' => 1,
         );
+      
     }
 }
-
-
 
 ?>
 
@@ -78,6 +78,7 @@ if (isset($_POST['addtocart'])) {
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                     <?php foreach($_SESSION['cart'] as $key=>$value ){
 
                                     ?>
@@ -119,7 +120,7 @@ if (isset($_POST['addtocart'])) {
 
                                         <tr class="cart_item wrap-buttons">
                                             <td class="wrap-btn-control" colspan="4">
-                                                <a class="btn back-to-shop">Back to Shop</a>
+                                                <a href="#" class="btn back-to-shop">Back to Shop</a>
                                                 <button class="btn btn-update" type="submit" disabled>update</button>
                                                 <button class="btn btn-clear" type="reset">clear all</button>
                                             </td>

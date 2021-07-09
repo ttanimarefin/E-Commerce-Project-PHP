@@ -1,6 +1,6 @@
 <?php
 
-// use Componere\Method;
+
 session_start();
 include('admin/Class/adminBack.php');
 $obj = new adminBack();
@@ -149,19 +149,19 @@ if (isset($_GET['status'])) {
                                                 </div>
                                             </div>
                                             <div class="action-form">
-                                                <div class="quantity-box">
+                                                <!-- <div class="quantity-box">
                                                     <form action="" method="POST">
                                                         <span class="title">Quantity:
-                                                            <?php
-                                                            if (isset($_POST['update_total'])) {
+                                                            
+                                                      //
+                                                           // if (isset($_POST['update_total'])) {
                                                                 $quantity = $_POST['quantity'];
                                                                 echo $quantity;
-                                                            } else {
+                                                             else 
                                                                 echo 1;
-                                                            }
+                                                            
 
-                                                            ?>
-
+                                                              
                                                         </span>
                                                         <input class="form-control" name="quantity" type="number">
 
@@ -169,21 +169,23 @@ if (isset($_GET['status'])) {
                                                         <input class="btn btn-primary" type="submit" name="update_total" value="update total">
 
                                                     </form>
-                                                </div>
+                                                </div> -->
                                                 <div class="total-price-contain">
-                                                    <span class="title">Total Price:</span>
+                                                    <span class="title">Product Price:</span>
                                                     <p class="price">
                                                         <?php
-                                                        if (isset($_POST['update_total'])) {
-                                                            $quantity = $_POST['quantity'];
-                                                            if (empty($quantity)) {
-                                                                echo "Qunatity Should Not Be Empty !";
-                                                            } else {
-                                                                echo '£' . $pro['pdt_price'] *  $quantity;
-                                                            }
-                                                        } else {
+                                                        // if (isset($_POST['update_total'])) {
+                                                        //     $quantity = $_POST['quantity'];
+                                                        //     if (empty($quantity)) {
+                                                        //         echo "Qunatity Should Not Be Empty !";
+                                                        //     } else {
+                                                        //         echo '£' . $pro['pdt_price'] *  $quantity;
+                                                        //     }
+                                                        // } else {
+
+                                                        
                                                             echo '£' .  $pro['pdt_price'];
-                                                        }
+                                                        
 
                                                         ?>
 
@@ -193,7 +195,7 @@ if (isset($_GET['status'])) {
                                                     <input type="hidden" name="pdt_name" value="<?php echo $pro['pdt_name'];?>">
                                                     <input type="hidden" name="pdt_img" value="<?php echo $pro['pdt_img'];?>">
                                                     <input type="hidden" name="pdt_price" value="<?php echo $pro['pdt_price'];?>">
-                                                    <input type="submit" name="addtocart" value="Add To Cart" class="btn add-to-cart-btn">add to cart</a>
+                                                    <input type="submit" name="addtocart" value="Add To Cart" class="btn add-to-cart-btn">
                                                     <p class="pull-row">
                                                         <a href="#" class="btn wishlist-btn">wishlist</a>
                                                         <a href="#" class="btn compare-btn">compare</a>
