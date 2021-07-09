@@ -38,6 +38,14 @@ if (isset($_POST['addtocart'])) {
       
     }
 }
+if(isset($_POST['remove_product'])){
+    foreach($_SESSION['cart'] as $key=>$value){
+        if($value['pdt_name']==$_POST['remove_pdt_name']){
+            unset($_SESSION['cart']['$key']);
+            $_SESSION['cart']=array_values($_SESSION['cat']);
+        }
+    }
+
 
 ?>
 
@@ -74,12 +82,19 @@ if (isset($_POST['addtocart'])) {
                                             <th class="product-name">Product Name</th>
                                             <th class="product-price">Price</th>
                                             <th class="product-quantity">Quantity</th>
+                                            <th class="product-quantity">Remove</th>
                                             <th class="product-subtotal">Total</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
-                                    <?php foreach($_SESSION['cart'] as $key=>$value ){
+                                    <?php if(isset($_SESSION['cart'])){
+                                        foreach($_SESSION['cart'] as $key=>$value ){
+
+                                        
+
+                                    
+                        
 
                                     ?>
                                         <tr class="cart_item">
@@ -108,6 +123,13 @@ if (isset($_POST['addtocart'])) {
                                                     </div>
                                                 </div>
                                             </td>
+
+                                            <td class="product-quantity" data-title="Quantity">
+                                                <form action="" method="POST">
+                                                    <input type="hidden" name="remove_pdt_name" value="<?php echo $value['pdt_name'];?>">
+                                                    <input class="btn btn-warning" type="submit" value="Remove Product" name="remove_product">
+                                                </form> 
+                                            </td>
                                             <td class="product-subtotal" data-title="Total">
                                                 <div class="price price-contain">
                                                     <ins><span class="price-amount"><span class="currencySymbol">£</span>85.00</span></ins>
@@ -115,7 +137,9 @@ if (isset($_POST['addtocart'])) {
                                                 </div>
                                             </td>
                                         </tr>
-                            <?php }?>
+                            <?php }}else{
+                                echo "Your Cart is now empty!";
+                            } ?>
 
 
                                         <tr class="cart_item wrap-buttons">
