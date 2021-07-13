@@ -7,19 +7,19 @@ $ctgDatas = array();
 while ($data = mysqli_fetch_assoc($ctg)) {
     $ctgDatas[] = $data;
 }
-if(isset($_GET['status'])){
+if (isset($_GET['status'])) {
     $catID = $_GET['id'];
-    if($_GET['status']=='catView'){
+    if ($_GET['status'] == 'catView') {
         $prodata = $obj->product_by_ctg($catID);
         $pros = array();
-        while($prodatas = mysqli_fetch_assoc($prodata)){
-            $pros[]= $prodatas;
+        while ($prodatas = mysqli_fetch_assoc($prodata)) {
+            $pros[] = $prodatas;
         }
     }
 }
-if(isset($_GET['status'])){
+if (isset($_GET['status'])) {
     $catID = $_GET['id'];
-    if($_GET['status']=='catView'){
+    if ($_GET['status'] == 'catView') {
         $category_name = $obj->ctg_by_id($catID);
     }
 }
@@ -47,10 +47,10 @@ if(isset($_GET['status'])){
             <div class="hero-section hero-background">
                 <h1 class="page-title">
                     <?php //foreach($pros as $pro){
-                        //echo $pro['ctg_name'];}
-                     
-                      echo $category_name['ctg_name'];
-                    
+                    //echo $pro['ctg_name'];}
+
+                    echo $category_name['ctg_name'];
+
                     ?>
                 </h1>
             </div>
@@ -61,12 +61,12 @@ if(isset($_GET['status'])){
                     <ul>
                         <li class="nav-item"><a href="index.php" class="permal-link">Home</a></li>
                         <li class="nav-item"><span class="current-page">
-                        <?php echo $category_name['ctg_name'];
-                    
-                    
-                    
-                    ?>     
-                        </span></li>
+                                <?php echo $category_name['ctg_name'];
+
+
+
+                                ?>
+                            </span></li>
                     </ul>
                 </nav>
             </div>
@@ -84,35 +84,35 @@ if(isset($_GET['status'])){
 
                                     <div class="row">
                                         <ul class="products-list">
-                                        <?php foreach($pros as $pro){ ?>
-                                            <li class="product-item col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                                                <div class="contain-product layout-default">
-                                                    <div class="product-thumb">
-                                                        <a href="single_product.php?status=sigleproduct&&id=<?php echo $pro['pdt_id']; ?>" class="link-to-product">
-                                                            <img src="admin/upload/<?php echo $pro['pdt_img']; ?>" alt="dd" width="270" height="270" class="product-thumnail">
-                                                        </a>
-                                                    </div>
-                                                    <div class="info">
-                                                        <b class="categories"><?php echo $pro['ctg_name']; ?></b>
-                                                        <h4 class="product-title"><a href="single_product.php?status=sigleproduct&&id=<?php echo $pro['pdt_id']; ?>" class="pr-name"><?php echo $pro['pdt_name']; ?></a></h4>
-                                                        <div class="price">
-                                                            <ins><span class="price-amount"><span class="currencySymbol">£</span><?php echo $pro['pdt_price']; ?></span></ins>
+                                            <?php foreach ($pros as $pro) { ?>
+                                                <li class="product-item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                                                    <div class="contain-product layout-default">
+                                                        <div class="product-thumb">
+                                                            <a href="single_product.php?status=sigleproduct&&id=<?php echo $pro['pdt_id']; ?>" class="link-to-product">
+                                                                <img src="admin/upload/<?php echo $pro['pdt_img']; ?>" alt="dd" width="270" height="270" class="product-thumnail">
+                                                            </a>
                                                         </div>
-                                                        <div class="shipping-info">
-                                                            <p class="shipping-day">3-Day Shipping</p>
-                                                            <p class="for-today">Free Pickup Today</p>
-                                                        </div>
-                                                        <div class="slide-down-box">
-                                                            <p class="message">All products are carefully selected to ensure food safety.</p>
-                                                            <div class="buttons">
-                                                                <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                                                <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
-                                                                <a href="single_product.php?status=sigleproduct&&id=<?php echo $pro['pdt_id']; ?>" class="btn compare-btn"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        <div class="info">
+                                                            <b class="categories"><?php echo $pro['ctg_name']; ?></b>
+                                                            <h4 class="product-title"><a href="single_product.php?status=sigleproduct&&id=<?php echo $pro['pdt_id']; ?>" class="pr-name"><?php echo $pro['pdt_name']; ?></a></h4>
+                                                            <div class="price">
+                                                                <ins><span class="price-amount"><span class="currencySymbol">£</span><?php echo $pro['pdt_price']; ?></span></ins>
+                                                            </div>
+                                                            <div class="shipping-info">
+                                                                <p class="shipping-day">3-Day Shipping</p>
+                                                                <p class="for-today">Free Pickup Today</p>
+                                                            </div>
+                                                            <div class="slide-down-box">
+                                                                <p class="message">All products are carefully selected to ensure food safety.</p>
+                                                                <div class="buttons">
+                                                                    <a href="#" class="btn wishlist-btn"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                                                    <a href="#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>add to cart</a>
+                                                                    <a href="single_product.php?status=sigleproduct&&id=<?php echo $pro['pdt_id']; ?>" class="btn compare-btn"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </li>
+                                                </li>
                                             <?php } ?>
                                         </ul>
                                     </div>
