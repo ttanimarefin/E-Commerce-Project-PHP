@@ -8,6 +8,9 @@ while ($data = mysqli_fetch_assoc($ctg)) {
     $ctgDatas[] = $data;
 }
 
+if(isset($_POST['user_login_btn'])){
+    $msg=$obj->user_login($_POST);
+}
 
 ?>
 
@@ -31,6 +34,12 @@ while ($data = mysqli_fetch_assoc($ctg)) {
 
             <div class="container">
                 <h2 class="text-center">Login Now</h2>
+                <?php if(isset($msg)){
+                    echo $msg;
+                }
+                
+                
+                ?>
                 <div class="row">
 
                     <!--Form Sign In-->

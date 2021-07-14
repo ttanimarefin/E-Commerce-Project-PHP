@@ -270,6 +270,30 @@ class adminBack{
 
             
     }
+    function user_login($data){
+        $user_email = $data['user_email'];
+        $user_pass = $data['user_pass'];
+
+        $query= "SELECT * FROM user WHERE user_email='$user_email' AND user_pass='$user_pass'";
+
+        if(mysqli_query($this->conn,$query)){
+            $result = mysqli_query($this->conn,$query);
+            $user_info = mysqli_fetch_assoc($result);
+
+            if($user_info){
+                header('location:user_profile.php');
+                session_start();
+                $_SESSION['id'] = $user_info['user_id'];
+                $_SESSION['email'] = $user_info['user_email'];
+                $_SESSION['user_pass'] = $user_info['user_pass'];
+                $_SESSION['user_name'] = $user_info['user_name'];
+            }else{
+                $errmsg = "Your email or Password is incorrect!";
+                return $errmsg;
+            }
+        }
+        
+    }
     
 
     
