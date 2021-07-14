@@ -238,5 +238,39 @@ class adminBack{
 
     }
 
+    function user_register($data){
+            $username=$data['username'];
+            $user_firstName=$data['user_firstName'];
+            $user_lastName=$data['user_lastName'];
+            $useremail=$data['useremail'];
+            $user_mobile=$data['user_mobile'];
+            $user_pass=$data['user_pass'];
+            $user_roles=$data['user_roles'];
+
+            $get_user_data="SELECT * FROM user WHERE user_name='$username' or  user_email='$useremail'";
+            $sent_data=mysqli_query($this->conn,$get_user_data);
+            $row=mysqli_num_rows($sent_data);
+            if($row==1){
+               $msg="This Username or Email Already Exitst!";
+               return $msg; 
+            }else{
+                if(strlen($user_mobile)<11 or strlen($user_mobile)>11){
+                    $msg="Your Mobile Number Should Not Be Less Than or Greter Than 11 Digit";
+                    return $msg;
+                }else{
+                    $query="INSERT INTO users(user_name,user_firstname,user_lastname,user_email,user_password,user_mobile,user_roles)VALUE ('$username','$user_firstName','$user_lastName','$useremail','$user_pass','$user_mobile',$user_roles)";
+
+                    if(mysqli_query($this->conn,$query)){
+                            $msg="Your account successfully registered!";
+                            return $msg;
+                            }
+                        }
+
+            }
+
+            
+    }
+    
+
     
 } ?>

@@ -8,6 +8,10 @@ while ($data = mysqli_fetch_assoc($ctg)) {
     $ctgDatas[] = $data;
 }
 
+if(isset($_POST['user_register_btn'])){
+    $msg=$obj->user_register($_POST);
+    
+}
 
 ?>
 
@@ -31,6 +35,11 @@ while ($data = mysqli_fetch_assoc($ctg)) {
 
             <div class="container">
                 <h2 class="text-center">Register As User</h2>
+                <?php  if(isset($msg)){
+                    echo $msg;
+                }
+                
+                ?>
 
                 <div class="row">
 
